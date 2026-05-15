@@ -1,0 +1,16 @@
+torch
+pettingzoo
+supersuit
+stable-baselines3
+torch-geometric
+numpy
+pandas
+pyarrow
+scipy
+matplotlib
+seaborn
+boto3
+pyyaml
+tqdm
+wandb
+python-dotenv

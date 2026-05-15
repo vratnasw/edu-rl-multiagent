@@ -1,0 +1,32 @@
+data:
+  parquet_path: ../edu-data-pipeline/results/master_panel.parquet
+  spatial_edge_index: ../edu-spatial-rl/results/spatiotemporal/edge_index.npy
+  spatial_edge_weights: ../edu-spatial-rl/results/spatiotemporal/edge_weights.npy
+  district_embeddings: ../edu-gnn/results/embeddings/district_embeddings.pt
+  world_model_checkpoint: ../edu-world-model/results/checkpoints/best.pt
+  r2_world_model_key: checkpoints/edu-world-model/best.pt
+  r2_embeddings_key: embeddings/edu-gnn/district_embeddings.pt
+
+agents:
+  state_agent:
+    action_dim: 58
+    obs_dim: 256
+  county_agent:
+    action_dim: 5
+    obs_dim: 128
+  district_agent:
+    action_dim: 5
+    obs_dim: 128
+
+communication:
+  message_dim: 32
+  n_communication_rounds: 3
+  attention_heads: 4
+
+training:
+  total_steps: 1000000
+  batch_size: 256
+  lr: 0.0003
+  gamma: 0.99
+  checkpoint_dir: results/checkpoints
+  seed: 42
